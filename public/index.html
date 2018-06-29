@@ -45,7 +45,15 @@
                    
                     Promise.all(promises).then((results) => {
                         var html = ''
-                        console.log(results);
+                        //console.log(results);
+                        var accountsData = results[0];
+                        var contactsData = results[1];
+                        var opportunityData = results[2];
+
+                        console.log(accountsData);
+                        console.log(contactsData);
+                        console.log(opportunityData);
+
                         // results.forEach(function(objArray){
                         //     console.log(objArray);
                         //     html += '<tr><td colspan="3">Table#</td></tr>';

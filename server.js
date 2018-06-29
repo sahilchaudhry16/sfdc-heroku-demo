@@ -24,7 +24,6 @@ app.get('/api/selectAccount', function(req,res) {
                 result.dbUrl = process.env.DATABASE_URL;
                 //res = ({type: 'Account', rows: result.rows});
                 res.json(result.rows);
-                res.type = 'Account';
             }
         }
     );
@@ -46,7 +45,6 @@ app.get('/api/selectContact', function(req,res) {
                 result.dbUrl = process.env.DATABASE_URL;
                 //res = ({type: 'Contact', rows: result.rows});
                 res.json(result.rows);
-                res.type = 'Contact';
             }
         }
     );
@@ -69,7 +67,6 @@ app.get('/api/selectOpportunity', function(req,res) {
                 result.dbUrl = process.env.DATABASE_URL;
                 //res = ({type: 'Opportunity', rows: result.rows});
                 res.json(result.rows);
-                res.type = 'Opportunity';
             }
         }
     );

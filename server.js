@@ -41,7 +41,8 @@ app.post('/update', function(req, res) {
     });
 });
 
-app.get('/select', function(req,res) {
+app.get('/api/select', function(req,res) {
+    console.log('DBURL:', process.env.DATABASE_URL);
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         if (err) console.log(err);
     conn.query(

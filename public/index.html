@@ -44,20 +44,28 @@
                     });
                    
                     Promise.all(promises).then((results) => {
-                        console.log(results);
-                        var array = results,
-                                    tr;
 
-                                array.forEach((v, i) => {
-                                    var td = document.createElement('td');
+                        console.log(results);
+                        result.forEach(function(objArray){
+                            console.log(objArray);
+                            objArray.forEach(function(obj){
+                                console.log(obj);
+                            });
+                        });
+                        // var array = results,
+                        //             tr;
+
+                        //         array.forEach((v, i) => {
+                        //             var td = document.createElement('td');
                                     
-                                    if (!(i % 5)) {
-                                        tr = document.createElement('tr');
-                                        document.getElementById('recTable').appendChild(tr);
-                                    }
-                                    td.appendChild(document.createTextNode(v));
-                                    tr.appendChild(td);
-                                });
+                        //             if (!(i % 5)) {
+                        //                 console.log()
+                        //                 tr = document.createElement('tr');
+                        //                 document.getElementById('recTable').appendChild(tr);
+                        //             }
+                        //             td.appendChild(document.createTextNode(v));
+                        //             tr.appendChild(td);
+                        //         });
 
                         
                     }).catch(er => {

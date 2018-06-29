@@ -53,17 +53,44 @@
                         console.log(accountsData);
                         console.log(contactsData);
                         console.log(opportunityData);
+                        
+                        //populate accounts
+                        accountsData.forEach(function(objArray){
+                            console.log(objArray);
+                            html += '<tr><td colspan="3">Accounts</td></tr>';
+                            objArray.forEach(function(obj){
+                                console.log(obj);
+                                html += '<tr><td>'+obj.name+'</td><td>'+obj.annualrevenue+'</td><td>'+obj.type+'</td></tr>';
+                            });
+                            html += '</tr>';
+                            document.getElementById('recTable1').innerHTML = html;
+                        });
 
-                        // results.forEach(function(objArray){
-                        //     console.log(objArray);
-                        //     html += '<tr><td colspan="3">Table#</td></tr>';
-                        //     objArray.forEach(function(obj){
-                        //         console.log(obj);
-                        //         html += '<tr><td>'+obj.name+'</td><td>'+obj.annualrevenue+'</td><td>'+obj.type+'</td></tr>';
-                        //     });
-                        //     html += '</tr>';
-                        //     document.getElementById('recTable').innerHTML = html;
-                        // });
+                        //populate contacts
+                        contactsData.forEach(function(objArray){
+                            console.log(objArray);
+                            html += '<tr><td colspan="3">Table#</td></tr>';
+                            objArray.forEach(function(obj){
+                                console.log(obj);
+                                html += '<tr><td>'+obj.firstname+'</td><td>'+obj.lastname+'</td><td>'+obj.email+'</td></tr>';
+                            });
+                            html += '</tr>';
+                            document.getElementById('recTable2').innerHTML = html;
+                        });
+
+                         //populate opportunities
+                         opportunityData.forEach(function(objArray){
+                            console.log(objArray);
+                            html += '<tr><td colspan="3">Table#</td></tr>';
+                            objArray.forEach(function(obj){
+                                console.log(obj);
+                                html += '<tr><td>'+obj.name+'</td><td>'+obj.probability+'</td><td>'+obj.stagename+'</td></tr>';
+                            });
+                            html += '</tr>';
+                            document.getElementById('recTable3').innerHTML = html;
+                        });
+
+
                     }).catch(er => {
                         console.log(er);
                     });
@@ -106,7 +133,91 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="table-outer">
-                    <table id="recTable" class="table-container">
+                    <table id="recTable1" class="table-container">
+                            <!-- <tr>
+                              <th>Company</th>
+                              <th>Contact</th>
+                              <th>Country</th> 
+                            </tr>
+                            <tr>
+                              <td>Alfreds Futterkiste</td>
+                              <td>Maria Anders</td>
+                              <td>Germany</td>
+                            </tr>
+                            <tr>
+                              <td>Centro comercial Moctezuma</td>
+                              <td>Francisco Chang</td>
+                              <td>Mexico</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Ernst Handel</td>
+                              <td>Roland Mendel</td>
+                              <td>Austria</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Island Trading</td>
+                              <td>Helen Bennett</td>
+                              <td>UK</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Laughing Bacchus Winecellars</td>
+                              <td>Yoshi Tannamuri</td>
+                              <td>Canada</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Magazzini Alimentari Riuniti</td>
+                              <td>Giovanni Rovelli</td>
+                              <td>Italy</td>
+                              
+                            </tr> -->
+                          </table>
+                          <table id="recTable2" class="table-container">
+                            <!-- <tr>
+                              <th>Company</th>
+                              <th>Contact</th>
+                              <th>Country</th> 
+                            </tr>
+                            <tr>
+                              <td>Alfreds Futterkiste</td>
+                              <td>Maria Anders</td>
+                              <td>Germany</td>
+                            </tr>
+                            <tr>
+                              <td>Centro comercial Moctezuma</td>
+                              <td>Francisco Chang</td>
+                              <td>Mexico</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Ernst Handel</td>
+                              <td>Roland Mendel</td>
+                              <td>Austria</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Island Trading</td>
+                              <td>Helen Bennett</td>
+                              <td>UK</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Laughing Bacchus Winecellars</td>
+                              <td>Yoshi Tannamuri</td>
+                              <td>Canada</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>Magazzini Alimentari Riuniti</td>
+                              <td>Giovanni Rovelli</td>
+                              <td>Italy</td>
+                              
+                            </tr> -->
+                          </table>
+                          <table id="recTable3" class="table-container">
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>

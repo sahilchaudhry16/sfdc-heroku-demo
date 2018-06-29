@@ -50,14 +50,14 @@
                         var contactsData = results[1];
                         var opportunityData = results[2];
 
-                        console.log(accountsData);
-                        console.log(contactsData);
-                        console.log(opportunityData);
+                        //console.log(accountsData);
+                        //console.log(contactsData);
+                        //console.log(opportunityData);
                         
                         //populate accounts
                         accountsData.forEach(function(objArray){
-                            console.log(objArray);
-                            html += '<tr><td colspan="3">Accounts</td></tr>';
+                            //console.log(objArray);
+                            //html += '<tr><td colspan="3">Accounts</td></tr>';
                             html += '<tr><td>'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
                             // objArray.forEach(function(obj){
                             //     console.log(obj);
@@ -69,8 +69,8 @@
 
                         //populate contacts
                         contactsData.forEach(function(objArray){
-                            console.log(objArray);
-                            html += '<tr><td colspan="3">Contacts</td></tr>';
+                            //console.log(objArray);
+                            //html += '<tr><td colspan="3">Contacts</td></tr>';
                             html += '<tr><td>'+objArray.firstname+'</td><td>'+objArray.lastname+'</td><td>'+objArray.email+'</td></tr>';
                             // objArray.forEach(function(obj){
                             //     console.log(obj);
@@ -82,8 +82,8 @@
 
                          //populate opportunities
                          opportunityData.forEach(function(objArray){
-                            console.log(objArray);
-                            html += '<tr><td colspan="3">Table#</td></tr>';
+                            //console.log(objArray);
+                            //html += '<tr><td colspan="3">Table#</td></tr>';
                             html += '<tr><td>'+objArray.name+'</td><td>'+objArray.probability+'</td><td>'+objArray.stagename+'</td></tr>';
                             // objArray.forEach(function(obj){
                             //     console.log(obj);
@@ -137,6 +137,9 @@
         <div class="col-xs-12">
             <div class="table-outer">
                     <table id="recTable1" class="table-container">
+                        <tr>
+                            <th>Accounts</th>
+                        </tr>
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>
@@ -179,6 +182,9 @@
                             </tr> -->
                           </table>
                           <table id="recTable2" class="table-container">
+                                <tr>
+                                        <th>Contacts</th>
+                                    </tr>
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>
@@ -221,6 +227,9 @@
                             </tr> -->
                           </table>
                           <table id="recTable3" class="table-container">
+                                <tr>
+                                    <th>Opportunities</th>
+                                    </tr>
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>

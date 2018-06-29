@@ -15,7 +15,7 @@ app.get('/api/selectAccount', function(req,res) {
     if (err) res.status(400).json({error: 'Error in connecting'});
     if(!conn) res.status(400).json({error: 'Connection failed'});
     conn.query(
-        'SELECT * FROM salesforce.Account WHERE LIMIT 5', function(err,result) {
+        'SELECT * FROM salesforce.Account WHERE Type IS NOT NULL LIMIT 5', function(err,result) {
             if (err) {
                 res.status(400).json({error: err.message});
             }

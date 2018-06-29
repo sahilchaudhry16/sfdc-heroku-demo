@@ -46,8 +46,9 @@ app.get('/hello', function (req,res) {
  });
 
 app.get('/api/select', function(req,res) {
-    pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
-        if (err) console.log(err);
+    console.log('Db url', process.env.DATABASE_URL);
+    pg.connect('postgres://cdfbwviosuncnf:6c3b6526ed134fe49c0679ea892b796c3b30a707e9bf28f7d90679020efe82fe@ec2-54-227-247-225.compute-1.amazonaws.com:5432/d4di08hvdg5gto', function (err, conn, done) {
+    if (err) console.log(err);
     conn.query(
         'SELECT * FROM salesforce.Account', function(err,result) {
             if (err) {

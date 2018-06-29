@@ -23,16 +23,12 @@
 
                 $("#message").hide();
 
-                var firstName = $("#firstName").val();
-                var lastName = $("#lastName").val();
-                var email = $("#email").val();
-                var phone = $("#phone").val();
+                // var firstName = $("#firstName").val();
+                // var lastName = $("#lastName").val();
+                // var email = $("#email").val();
+                // var phone = $("#phone").val();
 
-                if (firstName.length == 0 || lastName.length == 0 || email.length == 0 || phone.length == 0) {
-                    errorMessage.text("All of the fields are required.");
-                    error.show();
-                }
-                else {
+            
                     const endpoints = ['/api/selectAccount', '/api/selectContact','/api/selectOpportunity'];
                     var promises = [];
                     endpoints.forEach((endpoint) => {
@@ -57,7 +53,6 @@
                     }).catch(er => {
                         console.log(er);
                     });
-                }
             });
         });
 
@@ -67,7 +62,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Phone Number Changer</a>
+                <a class="navbar-brand" href="/">Salesforce Records Viewer</a>
             </div>
         </div>
     </nav>
@@ -76,9 +71,9 @@
         <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Update Your Phone Number</h3>
+                    <h3 class="panel-title">Hit the button below to fetch records from Salesforce</h3>
                 </div>
-                <div class="panel-body">
+                <!-- <div class="panel-body">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" placeholder="For verification" required>
@@ -95,7 +90,7 @@
                         <label for="phone">Phone</label>
                         <input type="tel" class="form-control" id="phone" placeholder="New Phone Number" required>
                     </div>
-                </div>
+                </div> -->
                 <div class="panel-footer">
                     <div id="message" class="alert alert-info" role="alert" style="display: none;">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
@@ -106,7 +101,7 @@
                         <span class="sr-only">Error:</span>
                         <span id="errorMessage"></span>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Phone Number</button>
+                    <button type="submit" class="btn btn-primary">Fetch Records</button>
                 </div>
             </div>
         </form>

@@ -45,14 +45,21 @@
                    
                     Promise.all(promises).then((results) => {
                         console.log(results);
-                        var ul = $('<ul>').appendTo('body');
-                        var json =   $.getJSON(results);
-                        console.log('json--> ',json);
-                        $(json.items).each(function(index, item) {
-                        ul.append(
-                            $(document.createElement('li')).text(item)
-                            );
-                        });
+                        var array = results,
+                                    tr;
+
+                                array.forEach((v, i) => {
+                                    var td = document.createElement('td');
+                                    
+                                    if (!(i % 5)) {
+                                        tr = document.createElement('tr');
+                                        document.getElementById('recTable').appendChild(tr);
+                                    }
+                                    td.appendChild(document.createTextNode(v));
+                                    tr.appendChild(td);
+                                });
+
+                        
                     }).catch(er => {
                         console.log(er);
                     });
@@ -95,7 +102,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="table-outer">
-                    <table class="table-container">
+                    <table id="recTable" class="table-container">
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>

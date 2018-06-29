@@ -22,7 +22,7 @@ app.get('/api/selectAccount', function(req,res) {
             else {
                 done();
                 result.dbUrl = process.env.DATABASE_URL;
-                res = ({type: 'Account', rows: result.rows);
+                res = ({type: 'Account', rows: result.rows});
             }
         }
     );
@@ -42,7 +42,7 @@ app.get('/api/selectContact', function(req,res) {
             else {
                 done();
                 result.dbUrl = process.env.DATABASE_URL;
-                res = ({type: 'Contact', rows: result.rows);
+                res = ({type: 'Contact', rows: result.rows});
             }
         }
     );
@@ -63,7 +63,7 @@ app.get('/api/selectOpportunity', function(req,res) {
             else {
                 done();
                 result.dbUrl = process.env.DATABASE_URL;
-                res = ({type: 'Opportunity', rows: result.rows);
+                res = ({type: 'Opportunity', rows: result.rows});
             }
         }
     );

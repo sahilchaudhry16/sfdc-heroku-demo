@@ -46,7 +46,7 @@
                     Promise.all(promises).then((results) => {
                         console.log(results);
                         var ul = $('<ul>').appendTo('body');
-                        var json =  JSON.stringify(results);
+                        var json =  results;
                         console.log('json--> ',json);
                         $(json.items).each(function(index, item) {
                         ul.append(

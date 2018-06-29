@@ -55,42 +55,45 @@
                         //console.log(opportunityData);
                         
                         //populate accounts
+                        accHtml = '<tr><th colspan="3">Accounts</th></tr>';
                         accountsData.forEach(function(objArray){
                             //console.log(objArray);
                             //html += '<tr><td colspan="3">Accounts</td></tr>';
-                            html += '<tr><td>'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
+                            accHtml += '<tr><td>'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
                             // objArray.forEach(function(obj){
                             //     console.log(obj);
                             //     html += '<tr><td>'+obj.name+'</td><td>'+obj.annualrevenue+'</td><td>'+obj.type+'</td></tr>';
                             // });
-                            html += '</tr>';
-                            document.getElementById('recTable1').innerHTML = html;
+                            accHtml += '</tr>';
+                            document.getElementById('recTable1').innerHTML = accHtml;
                         });
 
                         //populate contacts
+                        conHtml = '<tr><th colspan="3">Contacts</th></tr>';
                         contactsData.forEach(function(objArray){
                             //console.log(objArray);
                             //html += '<tr><td colspan="3">Contacts</td></tr>';
-                            html += '<tr><td>'+objArray.firstname+'</td><td>'+objArray.lastname+'</td><td>'+objArray.email+'</td></tr>';
+                            conHtml += '<tr><td>'+objArray.firstname+'</td><td>'+objArray.lastname+'</td><td>'+objArray.email+'</td></tr>';
                             // objArray.forEach(function(obj){
                             //     console.log(obj);
                             //     html += '<tr><td>'+obj.firstname+'</td><td>'+obj.lastname+'</td><td>'+obj.email+'</td></tr>';
                             // });
-                            html += '</tr>';
-                            document.getElementById('recTable2').innerHTML = html;
+                            conHtml += '</tr>';
+                            document.getElementById('recTable2').innerHTML = conHtml;
                         });
 
                          //populate opportunities
+                         oppHtml = '<tr><th colspan="3">Opportunities</th></tr>';
                          opportunityData.forEach(function(objArray){
                             //console.log(objArray);
                             //html += '<tr><td colspan="3">Table#</td></tr>';
-                            html += '<tr><td>'+objArray.name+'</td><td>'+objArray.probability+'</td><td>'+objArray.stagename+'</td></tr>';
+                            oppHtml += '<tr><td>'+objArray.name+'</td><td>'+objArray.probability+'</td><td>'+objArray.stagename+'</td></tr>';
                             // objArray.forEach(function(obj){
                             //     console.log(obj);
                             //     html += '<tr><td>'+obj.name+'</td><td>'+obj.probability+'</td><td>'+obj.stagename+'</td></tr>';
                             // });
-                            html += '</tr>';
-                            document.getElementById('recTable3').innerHTML = html;
+                            oppHtml += '</tr>';
+                            document.getElementById('recTable3').innerHTML = oppHtml;
                         });
 
 
@@ -137,9 +140,9 @@
         <div class="col-xs-12">
             <div class="table-outer">
                     <table id="recTable1" class="table-container">
-                        <tr>
+                        <!-- <tr>
                             <th>Accounts</th>
-                        </tr>
+                        </tr> -->
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>
@@ -182,9 +185,9 @@
                             </tr> -->
                           </table>
                           <table id="recTable2" class="table-container">
-                                <tr>
+                                <!-- <tr>
                                         <th>Contacts</th>
-                                    </tr>
+                                    </tr> -->
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>
@@ -227,9 +230,9 @@
                             </tr> -->
                           </table>
                           <table id="recTable3" class="table-container">
-                                <tr>
+                                <!-- <tr>
                                     <th>Opportunities</th>
-                                    </tr>
+                                    </tr> -->
                             <!-- <tr>
                               <th>Company</th>
                               <th>Contact</th>

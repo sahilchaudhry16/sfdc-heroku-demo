@@ -51,28 +51,28 @@
                         var opportunityData = results[2];
 
                         //populate accounts
-                        accHtml = '<tr><th colspan="3">Accounts</th></tr>';
-                        accHtml += '<tr><td colspan="3">Name</td><td colspan="3">Annual Revenue</td><td colspan="3">Type</td></tr>';
+                        accHtml = '<tr class="tr-custom"><th class="th-custom">Accounts</th></tr>';
+                        accHtml += '<tr class="tr-custom"><td class="td-custom">Name</td><td class="td-custom">Annual Revenue</td><td class="td-custom">Type</td></tr>';
                         accountsData.forEach(function(objArray){
-                            accHtml += '<tr><td colspan="3">'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
+                            accHtml += '<tr><td >'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
                             accHtml += '</tr>';
                             document.getElementById('recTable1').innerHTML = accHtml;
                         });
 
                         //populate contacts
-                        conHtml = '<tr><th colspan="3">Contacts</th></tr>';
-                        conHtml = '<tr><td colspan="3">First Name</td><td colspan="3">Last Name</td><td colspan="3">Email</td></tr>';
+                        conHtml = '<tr><th >Contacts</th></tr>';
+                        conHtml = '<tr><td >First Name</td><td >Last Name</td><td >Email</td></tr>';
                         contactsData.forEach(function(objArray){
-                            conHtml += '<tr><td colspan="3">'+objArray.firstname+'</td><td colspan="3">'+objArray.lastname+'</td><td colspan="3">'+objArray.email+'</td></tr>';
+                            conHtml += '<tr><td >'+objArray.firstname+'</td><td >'+objArray.lastname+'</td><td >'+objArray.email+'</td></tr>';
                             conHtml += '</tr>';
                             document.getElementById('recTable2').innerHTML = conHtml;
                         });
 
                          //populate opportunities
-                         oppHtml = '<tr><th colspan="3">Opportunities</th></tr>';
-                         oppHtml = '<tr><td colspan="3">Opportunity Name</td><td colspan="3">Probability</td><td colspan="3">Stage</td></tr>';
+                         oppHtml = '<tr><th >Opportunities</th></tr>';
+                         oppHtml = '<tr><td >Opportunity Name</td><td >Probability</td><td >Stage</td></tr>';
                          opportunityData.forEach(function(objArray){
-                            oppHtml += '<tr><td colspan="3">'+objArray.name+'</td><td colspan="3">'+objArray.probability+'</td><td colspan="3">'+objArray.stagename+'</td></tr>';
+                            oppHtml += '<tr><td >'+objArray.name+'</td><td >'+objArray.probability+'</td><td >'+objArray.stagename+'</td></tr>';
                             oppHtml += '</tr>';
                             document.getElementById('recTable3').innerHTML = oppHtml;
                         });
@@ -118,13 +118,13 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="table-outer">
-                <table id="recTable1" class="table-container">
+                <table id="recTable1" class="table-container table-custom">
                 </table>
                 <br/><br/>
-                <table id="recTable2" class="table-container">
+                <table id="recTable2" class="table-container table-custom">
                 </table>
                 <br/><br/>
-                <table id="recTable3" class="table-container">
+                <table id="recTable3" class="table-container table-custom">
                 </table>
             </div>
         </div>

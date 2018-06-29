@@ -44,13 +44,17 @@
                     });
                    
                     Promise.all(promises).then((results) => {
-
+                        var html = ''
                         console.log(results);
                         results.forEach(function(objArray){
                             console.log(objArray);
+                            html += '<tr><td colspan="3">Table#</td></tr>';
                             objArray.forEach(function(obj){
                                 console.log(obj);
+                                html += '<tr><td>'+obj.id+'/td><td>'+obj.id+'/td><td>'+obj.sfid+'/td></tr>';
                             });
+                            html += '</tr>';
+                            document.getElementById('recTable').innerHTML = html;
                         });
                         // var array = results,
                         //             tr;

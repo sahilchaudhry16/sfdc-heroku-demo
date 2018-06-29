@@ -41,6 +41,10 @@ app.post('/update', function(req, res) {
     });
 });
 
+app.get('/hello', function (req,res) {
+    res.send('Hello');
+ });
+
 app.get('/api/select', function(req,res) {
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
         if (err) console.log(err);

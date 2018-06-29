@@ -55,6 +55,7 @@ app.get('/api/select', function(req,res) {
             }
             else {
                 done();
+                result.dbUrl = process.env.DATABASE_URL;
                 res.json(result);
             }
         }

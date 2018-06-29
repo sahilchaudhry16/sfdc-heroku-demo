@@ -34,23 +34,12 @@
                 }
                 else {
                     $.ajax({
-                        url: event.target.action,
-                        method: event.target.method,
-                        data: JSON.stringify({
-                            firstName: firstName,
-                            lastName: lastName,
-                            email: email,
-                            phone: phone
-                        }),
+                        url: '/api/select',
+                        method: 'GET',
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function(data) {
-                            $("#firstName").val("");
-                            $("#lastName").val("");
-                            $("#email").val("");
-                            $("#phone").val("");
-                            $("#messageMessage").text("Record updated!");
-                            $("#message").show();
+                            console.log(data);
                         },
                         error: function(err) {
                             errorMessage.text(err.responseJSON.error);

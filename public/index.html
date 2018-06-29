@@ -55,7 +55,7 @@
                                         tr = document.createElement('tr');
                                         document.getElementById('recTable').appendChild(tr);
                                     }
-                                    td.appendChild(v);
+                                    td.appendChild(document.createTextNode(v));
                                     tr.appendChild(td);
                                 });
 

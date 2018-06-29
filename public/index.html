@@ -58,10 +58,11 @@
                         accountsData.forEach(function(objArray){
                             console.log(objArray);
                             html += '<tr><td colspan="3">Accounts</td></tr>';
-                            objArray.forEach(function(obj){
-                                console.log(obj);
-                                html += '<tr><td>'+obj.name+'</td><td>'+obj.annualrevenue+'</td><td>'+obj.type+'</td></tr>';
-                            });
+                            html += '<tr><td>'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
+                            // objArray.forEach(function(obj){
+                            //     console.log(obj);
+                            //     html += '<tr><td>'+obj.name+'</td><td>'+obj.annualrevenue+'</td><td>'+obj.type+'</td></tr>';
+                            // });
                             html += '</tr>';
                             document.getElementById('recTable1').innerHTML = html;
                         });
@@ -69,11 +70,12 @@
                         //populate contacts
                         contactsData.forEach(function(objArray){
                             console.log(objArray);
-                            html += '<tr><td colspan="3">Table#</td></tr>';
-                            objArray.forEach(function(obj){
-                                console.log(obj);
-                                html += '<tr><td>'+obj.firstname+'</td><td>'+obj.lastname+'</td><td>'+obj.email+'</td></tr>';
-                            });
+                            html += '<tr><td colspan="3">Contacts</td></tr>';
+                            html += '<tr><td>'+objArray.firstname+'</td><td>'+objArray.lastname+'</td><td>'+objArray.email+'</td></tr>';
+                            // objArray.forEach(function(obj){
+                            //     console.log(obj);
+                            //     html += '<tr><td>'+obj.firstname+'</td><td>'+obj.lastname+'</td><td>'+obj.email+'</td></tr>';
+                            // });
                             html += '</tr>';
                             document.getElementById('recTable2').innerHTML = html;
                         });
@@ -82,10 +84,11 @@
                          opportunityData.forEach(function(objArray){
                             console.log(objArray);
                             html += '<tr><td colspan="3">Table#</td></tr>';
-                            objArray.forEach(function(obj){
-                                console.log(obj);
-                                html += '<tr><td>'+obj.name+'</td><td>'+obj.probability+'</td><td>'+obj.stagename+'</td></tr>';
-                            });
+                            html += '<tr><td>'+objArray.name+'</td><td>'+objArray.probability+'</td><td>'+objArray.stagename+'</td></tr>';
+                            // objArray.forEach(function(obj){
+                            //     console.log(obj);
+                            //     html += '<tr><td>'+obj.name+'</td><td>'+obj.probability+'</td><td>'+obj.stagename+'</td></tr>';
+                            // });
                             html += '</tr>';
                             document.getElementById('recTable3').innerHTML = html;
                         });

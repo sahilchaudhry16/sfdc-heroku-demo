@@ -15,14 +15,13 @@ app.get('/api/selectAccount', function(req,res) {
     if (err) res.status(400).json({error: 'Error in connecting'});
     if(!conn) res.status(400).json({error: 'Connection failed'});
     conn.query(
-        'SELECT * FROM salesforce.Account WHERE salesforce.type != null LIMIT 5', function(err,result) {
+        'SELECT * FROM salesforce.Account WHERE salesforce.Type IS NOT NULL LIMIT 5', function(err,result) {
             if (err) {
                 res.status(400).json({error: err.message});
             }
             else {
                 done();
                 result.dbUrl = process.env.DATABASE_URL;
-                //res = ({type: 'Account', rows: result.rows});
                 res.json(result.rows);
             }
         }
@@ -43,7 +42,6 @@ app.get('/api/selectContact', function(req,res) {
             else {
                 done();
                 result.dbUrl = process.env.DATABASE_URL;
-                //res = ({type: 'Contact', rows: result.rows});
                 res.json(result.rows);
             }
         }
@@ -65,7 +63,6 @@ app.get('/api/selectOpportunity', function(req,res) {
             else {
                 done();
                 result.dbUrl = process.env.DATABASE_URL;
-                //res = ({type: 'Opportunity', rows: result.rows});
                 res.json(result.rows);
             }
         }

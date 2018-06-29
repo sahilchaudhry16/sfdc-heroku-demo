@@ -7,7 +7,7 @@
     <title>Salesforce Records Viewer</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css"/>
     <style>
         body {
             padding-top: 60px;
@@ -45,25 +45,18 @@
                    
                     Promise.all(promises).then((results) => {
                         var html = ''
-                        //console.log(results);
+                       
                         var accountsData = results[0];
                         var contactsData = results[1];
                         var opportunityData = results[2];
 
-                        //console.log(accountsData);
-                        //console.log(contactsData);
-                        //console.log(opportunityData);
-                        
                         //populate accounts
                         accHtml = '<tr><th colspan="3">Accounts</th></tr>';
+                        accHtml += '<tr><td colspan="3">Name</td></tr>';
+                        accHtml += '<tr><td colspan="3">Annual Revenue</td></tr>';
+                        accHtml += '<tr><td colspan="3">Type</td></tr>';
                         accountsData.forEach(function(objArray){
-                            //console.log(objArray);
-                            //html += '<tr><td colspan="3">Accounts</td></tr>';
                             accHtml += '<tr><td>'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
-                            // objArray.forEach(function(obj){
-                            //     console.log(obj);
-                            //     html += '<tr><td>'+obj.name+'</td><td>'+obj.annualrevenue+'</td><td>'+obj.type+'</td></tr>';
-                            // });
                             accHtml += '</tr>';
                             document.getElementById('recTable1').innerHTML = accHtml;
                         });
@@ -71,13 +64,7 @@
                         //populate contacts
                         conHtml = '<tr><th colspan="3">Contacts</th></tr>';
                         contactsData.forEach(function(objArray){
-                            //console.log(objArray);
-                            //html += '<tr><td colspan="3">Contacts</td></tr>';
                             conHtml += '<tr><td>'+objArray.firstname+'</td><td>'+objArray.lastname+'</td><td>'+objArray.email+'</td></tr>';
-                            // objArray.forEach(function(obj){
-                            //     console.log(obj);
-                            //     html += '<tr><td>'+obj.firstname+'</td><td>'+obj.lastname+'</td><td>'+obj.email+'</td></tr>';
-                            // });
                             conHtml += '</tr>';
                             document.getElementById('recTable2').innerHTML = conHtml;
                         });
@@ -85,18 +72,10 @@
                          //populate opportunities
                          oppHtml = '<tr><th colspan="3">Opportunities</th></tr>';
                          opportunityData.forEach(function(objArray){
-                            //console.log(objArray);
-                            //html += '<tr><td colspan="3">Table#</td></tr>';
                             oppHtml += '<tr><td>'+objArray.name+'</td><td>'+objArray.probability+'</td><td>'+objArray.stagename+'</td></tr>';
-                            // objArray.forEach(function(obj){
-                            //     console.log(obj);
-                            //     html += '<tr><td>'+obj.name+'</td><td>'+obj.probability+'</td><td>'+obj.stagename+'</td></tr>';
-                            // });
                             oppHtml += '</tr>';
                             document.getElementById('recTable3').innerHTML = oppHtml;
                         });
-
-
                     }).catch(er => {
                         console.log(er);
                     });

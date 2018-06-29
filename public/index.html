@@ -45,20 +45,17 @@
                    
                     Promise.all(promises).then((results) => {
                         console.log(results);
+                        var ul = $('<ul>').appendTo('table-container');
+                        var json = results;
+                        $(json.items).each(function(index, item) {
+                        ul.append(
+                            $(document.createElement('li')).text(item)
+                            );
+                        });
                     }).catch(er => {
                         console.log(er);
                     });
             });
-            
-            var ul = $('<ul>').appendTo('table-container');
-            var json = results;
-            $(json.items).each(function(index, item) {
-            ul.append(
-                $(document.createElement('li')).text(item)
-            );
-});
-
-            
         });
 
     </script>

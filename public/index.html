@@ -33,19 +33,30 @@
                     error.show();
                 }
                 else {
-                    $.ajax({
-                        url: '/api/select',
-                        method: 'GET',
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        success: function(data) {
-                            console.log(data);
-                        },
-                        error: function(err) {
-                            errorMessage.text(err.responseJSON.error);
-                            error.show();
-                        }
-                    })
+                    const endpoints = ['/api/selectAccount', '/api/selectContact','/api/selectOpportunity'];
+                    var promises = [];
+                    endpoints.forEach((endpoint) => {
+                        var p1 = $.ajax({
+                            url: endpoint
+                            method: 'GET',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function(data) {
+                                console.log(data);
+                            },
+                            error: function(err) {
+                                errorMessage.text(err.responseJSON.error);
+                                error.show();
+                            }
+                        });
+                        promises.push(p1);
+                    });
+                   
+                    Promise.all(promises).then((results) => {
+                        console.log(results);
+                    }).catch(er => {
+                        console.log(er);
+                    });
                 }
             });
         });

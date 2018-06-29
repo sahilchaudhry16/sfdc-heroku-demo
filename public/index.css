@@ -39,7 +39,7 @@
         
     }
     
-    tr:nth-child(even) {
+    tr {
         background-color: #eef9ff;
         font-size: 14px;
         font-weight: 350;

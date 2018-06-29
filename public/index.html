@@ -46,32 +46,16 @@
                     Promise.all(promises).then((results) => {
                         var html = ''
                         console.log(results);
-                        results.forEach(function(objArray){
-                            console.log(objArray);
-                            html += '<tr><td colspan="3">Table#</td></tr>';
-                            objArray.forEach(function(obj){
-                                console.log(obj);
-                                html += '<tr><td>'+obj.id+'</td><td>'+obj.id+',</td><td>'+obj.sfid+'</td></tr>';
-                            });
-                            html += '</tr>';
-                            document.getElementById('recTable').innerHTML = html;
-                        });
-                        // var array = results,
-                        //             tr;
-
-                        //         array.forEach((v, i) => {
-                        //             var td = document.createElement('td');
-                                    
-                        //             if (!(i % 5)) {
-                        //                 console.log()
-                        //                 tr = document.createElement('tr');
-                        //                 document.getElementById('recTable').appendChild(tr);
-                        //             }
-                        //             td.appendChild(document.createTextNode(v));
-                        //             tr.appendChild(td);
-                        //         });
-
-                        
+                        // results.forEach(function(objArray){
+                        //     console.log(objArray);
+                        //     html += '<tr><td colspan="3">Table#</td></tr>';
+                        //     objArray.forEach(function(obj){
+                        //         console.log(obj);
+                        //         html += '<tr><td>'+obj.name+'</td><td>'+obj.annualrevenue+'</td><td>'+obj.type+'</td></tr>';
+                        //     });
+                        //     html += '</tr>';
+                        //     document.getElementById('recTable').innerHTML = html;
+                        // });
                     }).catch(er => {
                         console.log(er);
                     });

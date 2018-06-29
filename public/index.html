@@ -53,8 +53,6 @@
                         //populate accounts
                         accHtml = '<tr><th colspan="3">Accounts</th></tr>';
                         accHtml += '<tr><td colspan="3">Name</td><td colspan="3">Annual Revenue</td><td colspan="3">Type</td></tr>';
-                        // accHtml += '<tr><td colspan="3">Annual Revenue</td></tr>';
-                        // accHtml += '<tr><td colspan="3">Type</td></tr>';
                         accountsData.forEach(function(objArray){
                             accHtml += '<tr><td>'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
                             accHtml += '</tr>';
@@ -63,6 +61,7 @@
 
                         //populate contacts
                         conHtml = '<tr><th colspan="3">Contacts</th></tr>';
+                        conHtml = '<tr><td colspan="3">First Name</td><td colspan="3">Last Name</td><td colspan="3">Email</td></tr>';
                         contactsData.forEach(function(objArray){
                             conHtml += '<tr><td>'+objArray.firstname+'</td><td>'+objArray.lastname+'</td><td>'+objArray.email+'</td></tr>';
                             conHtml += '</tr>';
@@ -71,6 +70,7 @@
 
                          //populate opportunities
                          oppHtml = '<tr><th colspan="3">Opportunities</th></tr>';
+                         oppHtml = '<tr><td colspan="3">Opportunity Name</td><td colspan="3">Probability</td><td colspan="3">Stage</td></tr>';
                          opportunityData.forEach(function(objArray){
                             oppHtml += '<tr><td>'+objArray.name+'</td><td>'+objArray.probability+'</td><td>'+objArray.stagename+'</td></tr>';
                             oppHtml += '</tr>';

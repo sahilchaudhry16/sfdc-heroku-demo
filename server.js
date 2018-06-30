@@ -35,7 +35,7 @@ app.get('/api/selectContact', function(req,res) {
     if (err) res.status(400).json({error: 'Error in connecting'});
     if(!conn) res.status(400).json({error: 'Connection failed'});
     conn.query(
-        'SELECT * FROM salesforce.Contact LIMIT 5', function(err,result) {
+        'SELECT * FROM salesforce.Contact WHERE Name LIKE \'D%\' LIMIT 5', function(err,result) {
             if (err) {
                 res.status(400).json({error: err.message});
             }

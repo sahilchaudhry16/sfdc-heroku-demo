@@ -51,8 +51,8 @@
                         var opportunityData = results[2];
 
                         //populate accounts
-                        accHtml = '<tr><th>Accounts</th></tr><br/>';
-                        accHtml += '<tr><td>Name</td><td>Annual Revenue</td><td>Type</td></tr>';
+                        accHtml = '<tr><th>Accounts</th></tr>';
+                        accHtml += '<br/><tr><td>Name</td><td>Annual Revenue</td><td>Type</td></tr>';
                         accountsData.forEach(function(objArray){
                             accHtml += '<tr><td >'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
                             accHtml += '</tr>';
@@ -60,8 +60,8 @@
                         });
 
                         //populate contacts
-                        conHtml = '<tr><th >Contacts</th></tr><br/>';
-                        conHtml += '<tr><td >First Name</td><td >Last Name</td><td >Email</td></tr>';
+                        conHtml = '<tr><th >Contacts</th></tr>';
+                        conHtml += '<br/><tr><td >First Name</td><td >Last Name</td><td >Email</td></tr>';
                         contactsData.forEach(function(objArray){
                             conHtml += '<tr><td >'+objArray.firstname+'</td><td >'+objArray.lastname+'</td><td >'+objArray.email+'</td></tr>';
                             conHtml += '</tr>';
@@ -69,8 +69,8 @@
                         });
 
                          //populate opportunities
-                         oppHtml = '<tr><th >Opportunities</th></tr><br/>';
-                         oppHtml += '<tr><td >Opportunity Name</td><td >Probability</td><td >Stage</td></tr>';
+                         oppHtml = '<tr><th >Opportunities</th></tr>';
+                         oppHtml += '<br/><tr><td >Opportunity Name</td><td >Probability</td><td >Stage</td></tr>';
                          opportunityData.forEach(function(objArray){
                             oppHtml += '<tr><td >'+objArray.name+'</td><td >'+objArray.probability+'</td><td >'+objArray.stagename+'</td></tr>';
                             oppHtml += '</tr>';

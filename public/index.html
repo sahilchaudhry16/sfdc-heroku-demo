@@ -15,6 +15,10 @@
     </style>
     <script>
         $(function() {
+            var numberWithCommas = (x) => {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
             $("#phoneChangerForm").submit(function(event) {
                 event.preventDefault();
 
@@ -54,7 +58,7 @@
                         accHtml = '<h2>Accounts</h2>';
                         accHtml += '<tr><th>Name</th><th>Annual Revenue</th><th>Type</th></tr>';
                         accountsData.forEach(function(objArray){
-                            accHtml += '<tr><td >'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
+                            accHtml += '<tr><td >'+objArray.name+'</td><td>$'+ numberWithCommas(objArray.annualrevenue)+'</td><td>'+objArray.type+'</td></tr>';
                             accHtml += '</tr>';
                             document.getElementById('recTable1').innerHTML = accHtml;
                         });

@@ -51,8 +51,8 @@
                         var opportunityData = results[2];
 
                         //populate accounts
-                        accHtml = '<tr><th>Accounts</th></tr>';
-                        accHtml += '<br/><tr><td>Name</td><td>Annual Revenue</td><td>Type</td></tr>';
+                        accHtml = '<h2>Accounts</h2>';
+                        accHtml += '<tr><th>Name</th><th>Annual Revenue</th><th>Type</th></tr>';
                         accountsData.forEach(function(objArray){
                             accHtml += '<tr><td >'+objArray.name+'</td><td>'+objArray.annualrevenue+'</td><td>'+objArray.type+'</td></tr>';
                             accHtml += '</tr>';

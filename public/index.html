@@ -70,9 +70,9 @@
 
                          //populate opportunities
                          oppHtml = '<h2>Opportunities</h2>';
-                         oppHtml += '<tr><td>Opportunity Name</td><td >Probability</td><td >Stage</td></tr>';
+                         oppHtml += '<tr><th>Opportunity Name</th><th >Probability</th><th >Stage</th></tr>';
                          opportunityData.forEach(function(objArray){
-                            oppHtml += '<tr><td >'+objArray.name+'</td><td >'+objArray.probability+'</td><td >'+objArray.stagename+'</td></tr>';
+                            oppHtml += '<tr><td>'+objArray.name+'</td><td >'+objArray.probability+'</td><td >'+objArray.stagename+'</td></tr>';
                             oppHtml += '</tr>';
                             document.getElementById('recTable3').innerHTML = oppHtml;
                         });
